@@ -412,6 +412,14 @@ class Infinite extends React.Component<
     }
   };
 
+  handleMouseOver(event) {
+    console.log('handle mouse over');
+  }
+
+  handleMouseOut() {
+    console.log('handle mouse out');
+  }
+
   render() {
     var displayables;
     if (this.state.numberOfChildren > 1) {
@@ -469,6 +477,8 @@ class Infinite extends React.Component<
         }}
         style={this.utils.buildScrollableStyle()}
         onScroll={this.utils.nodeScrollListener}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
       >
         <div
           ref={c => {
